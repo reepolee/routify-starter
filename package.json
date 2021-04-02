@@ -1,0 +1,67 @@
+{
+  "name": "reepolee-app",
+  "description": "Application starter for Svelte Apps",
+  "keywords": [
+    "svelte",
+    "routify",
+    "vite",
+    "tailwind",
+    "jit",
+    "rollup"
+  ],
+  "license": "MIT",
+  "author": "Ales Vaupotic <ales@reepolee.com> (https://twitter.com/alesvaupotic)",
+  "version": "0.5.0",
+  "scripts": {
+    "dev": "run-p dev:routify dev:vite",
+    "build": "routify -b && vite build",
+    "static": "routify -b && vite build && spank",
+    "serve": "vite preview",
+    "dev:routify": "routify",
+    "dev:vite": "vite"
+  },
+  "devDependencies": {
+    "@roxi/routify": "^2.15.1",
+    "@sveltejs/vite-plugin-svelte": "next",
+    "@tailwindcss/jit": "^0.1.18",
+    "autoprefixer": "^10.2.5",
+    "cssnano": "^4.1.10",
+    "mdsvex": "^0.9.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.9",
+    "postcss-load-config": "^3.0.1",
+    "postcss-windicss": "0.0.3",
+    "rehype-autolink-headings": "^5.0.1",
+    "rehype-slug": "^4.0.1",
+    "remark-abbr": "^1.4.1",
+    "remark-github": "^10.0.1",
+    "remark-slug": "^6.0.0",
+    "routify-plugin-frontmatter": "^1.0.1",
+    "spank": "git+https://github.com/reepolee/spank.git",
+    "svelte": "^3.37.0",
+    "svelte-preprocess": "^4.7.0",
+    "tailwindcss": "^2.0.4",
+    "tossr": "^1.4.2",
+    "vite": "^2.1.5"
+  },
+  "routify": {
+    "extensions": [
+      "md",
+      "svelte",
+      "svx"
+    ],
+    "plugins": {
+      "routify-plugin-frontmatter": {}
+    }
+  },
+  "appConfig": {
+    "port": 5000,
+    "assetsDir": "static",
+    "template": "dist/__app.html",
+    "distDir": "dist",
+    "buildDir": "dist/build"
+  },
+  "ava": {
+    "verbose": true
+  }
+}
