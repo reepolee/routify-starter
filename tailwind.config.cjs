@@ -1,6 +1,7 @@
 const { tailwindExtractor } = require("tailwindcss/lib/lib/purgeUnusedStyles");
 
 module.exports = {
+  mode: "jit",
   purge: {
     content: ["./src/**/*.{html,cjs,js,svelte,ts}"],
     options: {
@@ -37,5 +38,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/aspect-ratio")],
 };

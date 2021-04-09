@@ -1,10 +1,14 @@
 import { defineConfig } from "vite";
 import svelte from "@sveltejs/vite-plugin-svelte";
 import { mdsvex } from "mdsvex";
+import { resolve } from "path";
+
 const production = process.env.NODE_ENV === "production";
 
-// https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    open: true,
+  },
   plugins: [
     svelte({
       preprocess: [
@@ -26,5 +30,14 @@ export default defineConfig({
   },
   resolve: {
     dedupe: ["@roxi/routify"],
+    alias: {
+      $public: resolve(__dirname, "./public"),
+      $components: resolve(__dirname, "./src/components"),
+      $lib: resolve(__dirname, "./src/lib"),
+      $actions: resolve(__dirname, "./src/actions"),
+      $helpers: resolve(__dirname, "./src/helpers"),
+      $data: resolve(__dirname, "./src/data"),
+      $: resolve(__dirname, "./src"),
+    },
   },
 });
