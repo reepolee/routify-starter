@@ -5,7 +5,7 @@ This is a starter template we are using here at [Reepolee](https://www.reepolee.
 ## Setup
 
 ```
-npx degit reepolee/routify-starter my-app
+npx degit reepolee/routify-starter#main my-app
 cd my-app
 npm i
 npm run dev
