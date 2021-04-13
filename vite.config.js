@@ -9,6 +9,7 @@ export default defineConfig({
   server: {
     open: true,
   },
+  clearScreen: false,
   plugins: [
     svelte({
       preprocess: [
